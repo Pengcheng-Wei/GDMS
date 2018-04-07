@@ -1,0 +1,37 @@
+body {
+	padding: 5px;
+}
+table {
+	height: 100%;
+	width: 100%;
+	table-layout: fixed;
+}
+
+table td {
+	border: 1px solid #999;
+	padding: 10px;
+	vertical-align: top;
+}
+
+/*td被选中的样式*/
+.selected {
+	background-color: #fffbc4;
+	border: 2px solid #ffcc62;
+}
+
+/*组件头部样式*/
+.ue-panel .panel-heading {
+	cursor : move;
+}
+
+.panel {
+	width: 100%!important;
+}
+.ue-panel {
+	min-height:0px;
+	min-width:0px;
+	margin: 0;
+}
+ ul {
+  margin-top: 13px;
+}

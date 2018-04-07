@@ -1,0 +1,414 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px
+}
+
+.slick-header-columns {
+	background: #f0f0f0
+}
+
+.slickgrid {
+	border: #ecebec 1px solid
+}
+
+.slick-header-column {
+	background: #f0f0f0;
+	font-weight: 600;
+	text-align: center;
+	color: #444
+}
+
+.slick-headerrow {
+	background: #fafafa
+}
+
+.slick-headerrow-column {
+	background: #fafafa;
+	border-bottom: 0;
+	height: 100%
+}
+
+.slick-row.ui-state-active {
+	background: #F5F7D7
+}
+
+.slick-row {
+	position: absolute;
+	background: #fff;
+	border: 0;
+	line-height: 35px
+}
+
+.slick-row.selected {
+	z-index: 10;
+	background: #DFE8F6
+}
+
+.slick-cell {
+	padding-left: 8px;
+	padding-right: 8px
+}
+
+.slick-group {
+	border-bottom: 2px solid silver
+}
+
+.slick-group-toggle {
+	width: 9px;
+	height: 9px;
+	margin-right: 5px
+}
+
+.slick-group-toggle.expanded {
+	background: url(../img/collapse.gif) no-repeat center center
+}
+
+.slick-group-toggle.collapsed {
+	background: url(../img/expand.gif) no-repeat center center
+}
+
+.slick-group-totals {
+	color: gray;
+	background: #fff
+}
+
+.slick-cell.selected {
+	background-color: #fdf3e4
+}
+
+.slick-cell.active {
+	border-color: gray;
+	border-style: solid
+}
+
+.slick-sortable-placeholder {
+	background: silver !important
+}
+
+.slick-row.odd {
+	background: #f8f9fd
+}
+
+.slick-row.ui-state-active {
+	background: #F5F7D7
+}
+
+.slick-row.loading {
+	opacity: .5;
+	filter: alpha(opacity = 50)
+}
+
+.slick-cell.invalid {
+	border-color: red;
+	-moz-animation-duration: .2s;
+	-webkit-animation-duration: .2s;
+	-moz-animation-name: slickgrid-invalid-hilite;
+	-webkit-animation-name: slickgrid-invalid-hilite
+}
+
+@
+-moz-keyframes slickgrid-invalid-hilite {
+	from {box-shadow: 0 0 6px red
+}
+
+to {
+	box-shadow: none
+}
+
+}
+@
+-webkit-keyframes slickgrid-invalid-hilite {
+	from {box-shadow: 0 0 6px red
+}
+
+to {
+	box-shadow: none
+}
+
+}
+.slick-header, .slick-headerrow {
+	width: 100%;
+	overflow: hidden;
+	border-left: 0
+}
+
+.slick-header-columns, .slick-headerrow-columns {
+	position: relative;
+	white-space: nowrap;
+	cursor: default;
+	overflow: hidden
+}
+
+.slick-header-column {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	height: 35px;
+	line-height: 35px;
+	margin: 0;
+	border-left: 0;
+	border-top: 0;
+	border-bottom: 0;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	float: left
+}
+
+.slick-headerrow-column {
+	padding: 4px
+}
+
+.slick-header-column-sorted {
+	font-style: italic
+}
+
+.slick-sort-indicator {
+	display: inline-block;
+	width: 8px;
+	height: 5px;
+	margin-left: 4px;
+	margin-top: 6px;
+	float: left
+}
+
+.slick-sort-indicator-desc {
+	background: url(../img/sort-desc.gif)
+}
+
+.slick-sort-indicator-asc {
+	background: url(../img/sort-asc.gif)
+}
+
+.slick-resizable-handle {
+	position: absolute;
+	font-size: .1px;
+	display: block;
+	cursor: col-resize;
+	width: 4px;
+	right: 0;
+	top: 0;
+	height: 100%
+}
+
+.slick-sortable-placeholder {
+	background: silver
+}
+
+.grid-canvas {
+	position: relative;
+	outline: 0
+}
+
+.slick-row, .slick-row.ui-state-active {
+	position: absolute;
+	border: 0;
+	width: 100%
+}
+
+.slick-cell, .slick-headerrow-column {
+	position: absolute;
+	border: 1px solid transparent;
+	border-right: 1px dotted #ecebec;
+	border-bottom-color: #ecebec;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	z-index: 1;
+	padding: 1px 8px 2px;
+	margin: 0;
+	white-space: nowrap;
+	cursor: default
+}
+
+.slick-group-toggle {
+	display: inline-block
+}
+
+.slick-cell.highlighted {
+	background: #87cefa;
+	background: rgba(0, 0, 255, .2);
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s
+}
+
+.slick-cell.flashing {
+	border: 1px solid red !important
+}
+
+.slick-cell.editable {
+	z-index: 11;
+	overflow: visible;
+	background: #fff;
+	border-color: #ccc;
+	border-style: solid
+}
+
+.slick-cell:focus {
+	outline: 0
+}
+
+.slick-reorder-proxy {
+	display: inline-block;
+	background: #00f;
+	opacity: .15;
+	filter: alpha(opacity = 15);
+	cursor: move
+}
+
+.slick-reorder-guide {
+	display: inline-block;
+	height: 2px;
+	background: #00f;
+	opacity: .7;
+	filter: alpha(opacity = 70)
+}
+
+.slick-selection {
+	z-index: 10;
+	position: absolute;
+	border: 2px dashed #000
+}
+
+.slickgrid {
+	border: 1px solid #ddd;
+	width: 100%;
+	height: 80%
+}
+
+.slick-header-column {
+	color: #666;
+	font-weight: 700;
+	font-size: 14px;
+	height: 38px;
+	line-height: 38px;
+	border-bottom: 1px solid #ddd;
+	background: #f5f5f5
+}
+
+.slick-cell, .slick-headerrow-column {
+	border-right: 0;
+	text-align: center;
+	border-bottom-color: #f0f0f0
+}
+
+.slick-cell.active.selected {
+	border: 1px solid #aaa
+}
+
+.slick-cell a {
+	color: #3d99fe
+}
+
+.slick-cell a:focus, .slick-cell a:focus {
+	text-decoration: underline
+}
+
+.odd.slick-row {
+	background: #fafafa
+}
+
+.slick-cell.active {
+	border-color: #ddd;
+	border-style: solid;
+	border-right: 1px solid #ddd
+}
+
+.slick-row:hover, .selected.slick-cell {
+	background: #e8e9ea
+}
+
+.slick-row {
+	line-height: 33px
+}
+
+input.editor-text {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	border-radius: none;
+	margin: 0;
+	background: 0 0;
+	outline: 0;
+	padding: 0
+}
+
+select.editor-select {
+	width: 100%;
+	margin: 0
+}
+
+.operation {
+	float: right;
+	padding-right: 10px
+}
+
+.operationBtn {
+	display: none;
+	float: right
+}
+
+.compera {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 140px;
+	height: 34px
+}
+
+.comperabc {
+	background-color: #3e99ff
+}
+
+.operCell {
+	overflow: visible
+}
+
+select.recordsperpage {
+	display: inline-block;
+	width: auto;
+	min-width: inherit;
+	height: 34px;
+	margin-right: 5px
+}
+
+.pageList {
+	float: right
+}
+
+.pageList .pagination {
+	margin: 0;
+	float: left
+}
+
+.recordstate {
+	float: left;
+	top: 6px;
+	right: 26px
+}
+
+.slick-sort-indicator-desc {
+	background: url(../img/sort_desc.png);
+	width: 19px;
+	height: 19px;
+	float: right;
+	margin-top: 10px;
+	margin-left: 0
+}
+
+.slick-sort-indicator-asc {
+	background: url(../img/sort_asc.png);
+	width: 19px;
+	height: 19px;
+	float: right;
+	margin-top: 10px;
+	margin-left: 0
+}
+
+.slick-header-column-sorted {
+	font-style: normal
+}

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 包含常量配置 -->
+	<include file="constant.xml"></include>
+		
+	<!-- 每个业务模型的配置 -->
+	<include file="action/per_action/struts_per.xml"></include>
+	<include file="action/doc_action/struts_doc.xml"></include>
+
+</struts>

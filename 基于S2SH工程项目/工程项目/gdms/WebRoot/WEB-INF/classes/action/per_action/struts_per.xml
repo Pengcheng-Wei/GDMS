@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="per" extends="struts-default">
+	<!-- 自定义拦截器栈  包含了解决重复提交的拦截器 -->
+		<interceptors>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="user_*" class="action.per_action.VerifyAction" method="{1}" >
+			<interceptor-ref name="myStack"></interceptor-ref>
+			<!-- 当发生重复提交后指向的视图 -->
+			<result name="teacher" type="redirect">/jsp/t_home.jsp</result>
+			<result name="student" type="redirect">/jsp/s_home.jsp</result>
+			<result name="director" type="redirect">/jsp/d_home.jsp</result>
+			<result name="leader" type="redirect">/jsp/l_home.jsp</result>
+			<result name="failsign">/failSignin.jsp</result>
+			<result name="setDGroup">/jsp/common/setDGroup.jsp</result>
+			<result name="getDGroup">/jsp/common/getDGroup.jsp</result>
+		</action>
+	</package>
+
+</struts>

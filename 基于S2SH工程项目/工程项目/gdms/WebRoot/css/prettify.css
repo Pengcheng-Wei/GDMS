@@ -1,0 +1,99 @@
+/*!
+ * prettify
+ * 2015.7.7：修改pre.prettyprint边框颜色、padding值(2px->9px 14px)、添加背景色;
+ * 2015.10.20: 添加pre.prettyprint中-webkit-user-select:text;user-select:text;
+ */
+.pln {
+	color: #000
+}
+
+@media screen {
+	.str {
+		color: #080
+	}
+	.kwd {
+		color: #008
+	}
+	.com {
+		color: #800
+	}
+	.typ {
+		color: #606
+	}
+	.lit {
+		color: #066
+	}
+	.pun, .opn, .clo {
+		color: #660
+	}
+	.tag {
+		color: #008
+	}
+	.atn {
+		color: #606
+	}
+	.atv {
+		color: #080
+	}
+	.dec, .var {
+		color: #606
+	}
+	.fun {
+		color: red
+	}
+}
+
+@media print , projection {
+	.str {
+		color: #060
+	}
+	.kwd {
+		color: #006;
+		font-weight: bold
+	}
+	.com {
+		color: #600;
+		font-style: italic
+	}
+	.typ {
+		color: #404;
+		font-weight: bold
+	}
+	.lit {
+		color: #044
+	}
+	.pun, .opn, .clo {
+		color: #440
+	}
+	.tag {
+		color: #006;
+		font-weight: bold
+	}
+	.atn {
+		color: #404
+	}
+	.atv {
+		color: #060
+	}
+}
+
+pre.prettyprint {
+	padding: 9px 14px;
+	border: 1px solid #e1e1e8;
+	background-color: #f7f7f9;
+	-webkit-user-select: text;
+	user-select: text;
+}
+
+ol.linenums {
+	margin-top: 0;
+	margin-bottom: 0
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
+	list-style-type: none
+}
+
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+	background: #eee
+}

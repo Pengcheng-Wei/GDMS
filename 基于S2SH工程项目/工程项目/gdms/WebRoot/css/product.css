@@ -1,0 +1,40 @@
+/*demo距离顶部的外边距*/
+.topdist {
+	margin-top: 10px;
+}
+
+/*设置条件查询区域的样式*/
+.form-inline{
+	margin-left: 0px;
+	margin-bottom: 5px;
+}
+
+/*重写页面中row的样式*/
+.row {
+	margin: 0px;
+}
+
+/*多条件搜索文字与图标距离的设置*/
+a > i {
+	margin-left: 5px;
+}
+
+/*高级搜索弹出框的大小*/
+div.popover {
+	min-width: 500px;
+}
+ 
+html, body {
+	height: 100%;
+} 
+.container {
+	width: 100%;
+	height: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.grid {
+	width: 100%;
+	height: 80%;
+}
+

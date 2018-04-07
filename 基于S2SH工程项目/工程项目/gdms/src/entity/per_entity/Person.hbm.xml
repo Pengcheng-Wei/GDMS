@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- 
+	通过XML映射，把对象映射到数据库的表中！
+ -->
+<hibernate-mapping package="entity.per_entity">
+	
+	<class name="Person" abstract="true">
+		<id name="id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="name"></property>
+		<property name="phone"></property>
+		<property name="email"></property>
+		<property name="password"></property>
+		<!-- 描述子类 ：学生类 
+			private String gender;
+			private String dept;
+			private String major;
+			private String grade;
+			private String stype;
+			private Integer sub_id;
+		
+		-->
+		<union-subclass name="Student" table="t_student">
+			<property name="gender"></property>
+			<property name="dept"></property>
+			<property name="major"></property>
+			<property name="grade"></property>
+			<property name="stype"></property>
+			<property name="subStatus"></property>
+			<property name="graRep"></property>
+			<property name="repeatRep"></property>
+			<property name="finalGrade"></property>
+			<property name="cid"></property>
+			<property name="id_dept"></property>
+			
+			<!-- 一个项目  多个学生 -->
+		<many-to-one name="subject" column="sub_id" class="entity.doc_entity.Subject" lazy="false" fetch="join"></many-to-one>
+		<many-to-one name="teacher" column="tid" class="Teacher" lazy="false" fetch="join"></many-to-one>
+		
+		<many-to-one name="assignmentBook" column="assBook_id" class="entity.doc_entity.AssignmentBook" lazy="false" fetch="join"></many-to-one>
+		<many-to-one name="reaserchProposal" column="rePro_id" class="entity.doc_entity.ReaserchProposal" lazy="false" fetch="join"></many-to-one>
+		<many-to-one name="interimCheck" column="inCheck_id" class="entity.doc_entity.InterimCheck" lazy="false" fetch="join"></many-to-one>
+			
+		</union-subclass>
+		
+		<!-- 描述子类 ： 教师
+			private String title;
+			private String place;
+		 -->
+		 <union-subclass name="Teacher" table="t_teacher">
+		 	<property name="title"></property>
+		 	<property name="place"></property>
+		 	<property name="id_dept"></property>
+		 	<property name="stuTotal"></property>
+		 	<property name="cStuSum"></property>
+		 </union-subclass>
+		 
+		<!-- 描述子类 ： 领导 -->
+		 <union-subclass name="Leader" table="t_leader">
+		 	<property name="id_dept"></property>
+		 	<property name="title"></property>
+		 	<property name="dStuSum"></property>
+		 	<property name="dDate"></property>
+		 	<property name="dPlace"></property>
+		 </union-subclass>
+	</class>
+	
+</hibernate-mapping>

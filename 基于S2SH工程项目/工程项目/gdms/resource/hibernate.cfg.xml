@@ -1,0 +1,41 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+    	<!-- 一、 数据库连接的参数配置 -->
+    	<property name="hibernate.connection.url">jdbc:mysql:///gdms</property>
+    	<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    	<property name="hibernate.connection.username">root</property>
+    	<property name="hibernate.connection.password">509</property>
+    	<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    
+    	<!-- 二、 hibernate其他常用配置 -->
+    	<property name="hibernate.show_sql">false</property>
+    	<!--<property name="hibernate.format_sql">true</property>-->
+    	<property name="hibernate.hbm2ddl.auto">update</property>
+    	
+    	<!-- 
+    		hibernate对连接池的支持
+    	 -->
+    	 <!-- C3p0连接池支持类 -->
+    	 <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+    	 <!-- 最大连接数 -->
+    	 <property name="hibernate.c3p0.max_size">6</property>
+    	 <!-- 最小连接数 -->
+    	 <property name="hibernate.c3p0.min_size">4</property>
+    	 <!-- 当连接不够用时候每次的增量 -->
+    	 <property name="hibernate.c3p0.acquire_increment">2</property>
+    	 <!-- 最多执行的命令的个数 -->
+    	 <property name="hibernate.c3p0.max_statements">100</property>
+    	 <!-- 连接空闲测试时间 -->
+    	 <property name="hibernate.c3p0.idle_test_period">3000</property>
+    	
+    	
+    	 <!-- 配置session的创建方式，线程方式创建session -->
+    	 <property name="hibernate.current_session_context_class">thread</property>
+    	
+    	
+    </session-factory>
+</hibernate-configuration>

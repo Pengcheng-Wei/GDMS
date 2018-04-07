@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="doc" extends="struts-default">
+	<!-- 自定义拦截器栈  包含了解决重复提交的拦截器 -->
+		<interceptors>
+			<interceptor name="sessionTimeout" class="interceptor.SessionTimeoutIterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="sessionTimeout"></interceptor-ref>
+				<!-- <interceptor-ref name="token"></interceptor-ref> -->
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		 <global-results>
+			<result name="timeout" type="redirect">/sessionTimeout.jsp</result>
+	      </global-results>
+		<!-- action 配置 -->
+		<action name="sub_*" class="action.doc_action.SubjectAction" method="{1}" >
+			<!-- 当发生重复提交后指向的视图 -->
+			<!-- <result name="invalid.token" type="redirect">/jsp/common/500.jsp</result> -->
+			<result name="insertSuccess" type="redirect">/jsp/subject/subList.jsp</result>
+			<result name="update" type="redirect">/jsp/subject/subList.jsp</result>
+			<result name="delSub" type="redirect">/jsp/subject/subList.jsp</result>
+			<result name="checkSub" type="dispatcher">/jsp/subject/checkSub.jsp</result>
+			<result name="getSubs">/jsp/subject/subList.jsp</result>
+			<result name="teachSubResult">/jsp/subject/teachSubReslut.jsp</result>
+			<result name="seeSub" type="dispatcher">/jsp/subject/seeSub.jsp</result>
+			<result name="getAll" type="dispatcher">/jsp/subject/subListAll.jsp</result>
+			<result name="ifPass_l" type="redirect">/jsp/subject/subListAll.jsp</result>
+			  <result name="ifPass_d" type="redirect">/jsp/subject/subList_lead.jsp</result>
+			<result name="subLead" type="dispatcher">/jsp/subject/subList_lead.jsp</result>
+			
+			<result name="seeSubFstu" type="dispatcher">/jsp/subject/seeSubFstu.jsp</result>
+		</action>
+		<!-- 
+			教师题目表：subList.jsp 
+			教研主任题目表：subList_lead.jsp
+			院长题目表：subListAll.jsp
+		-->
+		<action name="select_*" class="action.doc_action.SelectSubAction" method="{1}">
+			<result name="getPassSubs" type="redirect">/jsp/subject/firstSelect.jsp</result>
+			<result name="updateSel">/jsp/subject/firstSelect.jsp</result>
+			<result name="selectResult">/jsp/subject/subListFstu.jsp</result>
+			<result name="Nosub_id">/jsp/common/Noresult.jsp</result>
+			<result name="delSub">/jsp/common/Noresult.jsp</result>
+		
+			<!-- 转向该老师所有通过审核题目的jsp页面 -->
+			<result name="teaPassSubs2">/jsp/subject/Sel_subListSecond.jsp</result>
+			<result name="selFristStu" type="redirect">/jsp/common/Noresult.jsp</result>
+			<!-- 转向选取该题目的学生列表jsp页面 -->
+			<result name="teaSelstu">/jsp/subject/selStuList.jsp</result>
+			<result name="getSelectResult">/jsp/subject/teachSelResult.jsp</result>
+			
+		</action>
+		
+		<action name="doc_*" class="action.doc_action.DocAction" method="{1}">
+			<!-- 教师查看学生论文提交情况列表 -->
+			<result name="checkReportIndex">/jsp/documents/checkReportIndex.jsp</result>
+			<result name="Nosub_id">/jsp/common/Noresult.jsp</result>
+			<!-- 任务书 -->
+			<result name="assBookIndex">/jsp/documents/assBookIndex.jsp</result>
+			<result name="getStuForAssBook">/jsp/documents/addAssBook.jsp</result>
+			<result name="assBookForLead">/jsp/documents/assBookForLead.jsp</result>
+			<result name="leadOptAssBook">/jsp/documents/AssBookFormLead.jsp</result>
+			<result name="getAssBookStu">/jsp/documents/AssBookFormStu.jsp</result>
+			<!-- 开题报告 -->
+			<result name="addReProIndex">/jsp/documents/addRePro.jsp</result>
+			<result name="addRePro">/jsp/documents/addRePro.jsp</result>
+			<result name="reProIndex">/jsp/documents/reProIndex.jsp</result>
+			<result name="updateReProIndex">/jsp/documents/addReProForTeach.jsp</result>
+			<result name="reProForLead">/jsp/documents/reProForLead.jsp</result>
+			<result name="leadOptRePro">/jsp/documents/addReProForLead.jsp</result>
+			<!-- 中期检查表 -->
+			<result name="addInCheckIndex">/jsp/documents/addInteCheck.jsp</result>
+			<result name="inCheckIndex">/jsp/documents/inCheckIndex.jsp</result>
+			<result name="updateInCheckIndex">/jsp/documents/addInteCheckForTeach.jsp</result>
+			<!-- 论文评阅审核表 -->
+			<result name="reviewRepForTeacherIndex">/jsp/documents/reviewRepForTeacherIndex.jsp</result>
+			<result name="updateReviewAuditIndexForDire">/jsp/documents/addReAuForDirector.jsp</result>
+			<result name="updateReviewAuditIndexForLead">/jsp/documents/addReAuForLeader.jsp</result>
+			<result name="updateReviewAuditIndex">/jsp/documents/addReAu.jsp</result>
+			<result name="updateReviewAuditIndexForCopt">/jsp/documents/addReAuForCopt.jsp</result>
+			<result name="reviewRepForDireIndex">/jsp/documents/reviewRepForDireIndex.jsp</result>
+			<result name="reviewRepForLeadIndex">/jsp/documents/reviewRepForLeadIndex.jsp</result>
+			<result name="getReAuBySid">/jsp/documents/reAuForStudent.jsp</result>
+			
+			<!-- 最终成绩 -->
+			<result name="getFinalGradeForDire">/jsp/documents/getFinalGradeForDirector.jsp</result>
+			<result name="getFinalGrade">/jsp/documents/finalGradeForTeacher.jsp</result>
+			<result name="getFinalGradeAll">/jsp/documents/getFinalGradeForLeader.jsp</result>
+		</action>
+		<!-- 文档上传 -->
+		<action name="upload_*" class="action.doc_action.UploadAction" method="{1}">
+				<!-- 往FileUploadInterceptor拦截器的属性注入值（调用setter方法） -->
+				
+			 	<interceptor-ref name="defaultStack">
+			 		<!-- 允许的文件后缀 -->
+			 		<param name="fileUpload.allowedExtensions">doc,docx</param>
+			 	</interceptor-ref>
+			 	
+				<param name="saveGraRep">G:/GraduationDocs/GraduationReports/</param>
+				<param name="saveRepeatRep">G:/GraduationDocs/RepeatReports/</param>
+				<result type="redirect">/jsp/common/upload.jsp</result>
+				<result name="input">/jsp/common/500.jsp</result>
+		</action>
+			
+			<!-- 文档下载 -->
+		<action name="down_*" class="action.doc_action.DownloadAction" method="{1}">
+				<param name="serverPathGra">G:/GraduationDocs/GraduationReports/</param>
+				<param name="serverPathRepeat">G:/GraduationDocs/RepeatReports/</param>
+				<param name="serverPathAssBook">G:/GraduationDocs/AssignmentBook/</param>
+				<param name="serverPathRePro">G:/GraduationDocs/ResearchProposal/</param>
+				<param name="serverPathInCheck">G:/GraduationDocs/InterimCheck/</param>
+				<param name="serverPathReAu">G:/GraduationDocs/ReviewAudit/</param>
+				<!-- 文件下载的关键: 视图类型一定是stream -->
+				<result name="down" type="stream">
+					 <!--  往StreamResult类中的属性注入内容 -->
+					 <!-- 返回给浏览器的文件类型。返回通用的二进制 -->
+					 <param name="contentType">application/octet-stream</param>
+					 <!-- 返回给浏览器的输入流 -->
+  					 <param name="inputName">inputStream</param>
+  					 <!--  告诉浏览器的方式下载资源
+  					 ${name}: 获取Action中的getName()方法的数据
+  					 -->
+  					 <param name="contentDisposition">attachment;filename=${downFileName}</param>
+  					 <!-- 缓存大小 -->
+   					 <param name="bufferSize">1024</param>
+				</result>
+		</action>
+		
+	</package>
+
+</struts>

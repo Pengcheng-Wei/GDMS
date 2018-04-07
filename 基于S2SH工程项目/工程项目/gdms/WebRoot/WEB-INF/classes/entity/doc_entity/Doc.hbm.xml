@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- 
+	通过XML映射，把对象映射到数据库的表中！
+ -->
+<hibernate-mapping package="entity.doc_entity">
+	
+	<class name="Subject" table="t_subject">
+		<id name="sub_id" column="sub_id">
+			<!-- 自增长 -->
+			<generator class="native"></generator>
+		</id>
+		<property name="subName" ></property>
+		<property name="en_name" ></property>
+		<property name="intro" ></property>
+		<property name="tech" ></property>
+		<property name="faceTo" ></property>
+		<property name="sub_type"></property>
+		
+		<property name="direcOpt"></property>
+		<property name="leadOpt"></property>
+		<property name="status"></property>
+		<property name="stuSum"></property>
+		
+		<property name="major_direction"></property>
+		
+		<!-- 一个老师 多个题目 -->
+		<many-to-one name="teacher" column="tid" class="entity.per_entity.Teacher" lazy="false" fetch="join"></many-to-one>
+	</class>
+	<class name="AssignmentBook" table="t_assignmentbook">
+		<id name="assBook_id" >
+			<generator class="native"></generator>
+		</id>
+		<property name="sub_src"></property>
+		<property name="sub_property"></property>
+		<property name="sub_baseReq"></property>
+		<property name="sub_gogal"></property>
+		<property name="sub_content"></property>
+		<property name="sub_refe"></property>
+		<property name="sub_process"></property>
+		<property name="sub_deptOpt"></property>
+		<property name="sub_deptName"></property>
+		<property name="check_time"></property>
+		
+		<many-to-one name="teacher" column="tid" class="entity.per_entity.Teacher" lazy="false" fetch="join"></many-to-one>
+		<many-to-one name="student" column="stu_id" class="entity.per_entity.Student" lazy="false" fetch="join"></many-to-one>
+	</class>
+	
+	<class name="ReaserchProposal" table="t_reaserchproposal">
+		<id name="repro_id" >
+			<generator class="native"></generator>
+		</id>
+		<property name="sub_gogal"></property>
+		<property name="sub_content"></property>
+		<property name="sub_plan"></property>
+		<property name="sub_question"></property>
+		<property name="sub_refe"></property>
+		<property name="t_opt"></property>
+		<property name="date"></property>
+		<property name="t_time"></property>
+		<property name="dept_time"></property>
+		<property name="deadline"></property>
+		<property name="sub_background"></property>
+		<property name="totalSum"></property>
+		<property name="dept_name"></property>
+		<property name="dept_opt"></property>
+		
+		<many-to-one name="student" column="sid" class="entity.per_entity.Student" lazy="false" fetch="join"></many-to-one>
+		<many-to-one name="teacher" column="tid" class="entity.per_entity.Teacher" lazy="false" fetch="join"></many-to-one>
+	</class>
+	<class name="InterimCheck" table="t_interimcheck">
+		<id name="inCheck_id" >
+			<generator class="native"></generator>
+		</id>
+		<property name="finish"></property>
+		<property name="unfinish"></property>
+		<property name="sub_plan"></property>
+		<property name="t_opt"></property>
+		<property name="t_time"></property>
+		<property name="date"></property>
+		
+		<many-to-one name="student" column="sid" class="entity.per_entity.Student" lazy="false" fetch="join"></many-to-one>
+		<many-to-one name="teacher" column="tid" class="entity.per_entity.Teacher" lazy="false" fetch="join"></many-to-one>
+	</class>
+	<!-- 
+	private Integer reau_id ;
+	private String t_opt   ;
+	private String t_time  ;
+	private String c_opt   ;
+	private String c_time  ;
+	private String d_opt   ;
+	private String d_time  ;
+	private String l_opt   ;
+	private String l_time  ;
+	private String d_name  ;
+	private String l_name  ;
+	private String date    ;
+	private String totalSum;
+	private Student student;
+	private Teacher teacher;
+	
+	 -->
+	<class name="ReviewAudit" table="t_reviewaudit">
+		<id name="reau_id" >
+			<generator class="native"></generator>
+		</id>
+		<property name="t_opt"></property>
+		<property name="t_time"></property>
+		<property name="c_opt"></property>
+		<property name="c_time"></property>
+		<property name="cid"></property>
+		<property name="did"></property>
+		<property name="d_opt"></property>
+		<property name="d_time"></property>
+		<property name="l_opt"></property>
+		<property name="d_name"></property>
+		<property name="l_time"></property>
+		<property name="l_name"></property>
+		<property name="c_name"></property>
+		<property name="date"></property>
+		<property name="totalSum"></property>
+		<property name="t_grade"></property>
+		<property name="c_grade"></property>
+		<property name="d_grade"></property>
+		<many-to-one name="student" column="sid" class="entity.per_entity.Student" lazy="false" fetch="join"></many-to-one>
+		<many-to-one name="teacher" column="tid" class="entity.per_entity.Teacher" lazy="false" fetch="join"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

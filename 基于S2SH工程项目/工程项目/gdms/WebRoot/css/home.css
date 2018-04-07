@@ -1,0 +1,361 @@
+body {
+	font: 14px arial,microsoft yahei,simsun,simhei,sans-serif;
+}
+.navbar {
+	margin-bottom: 0;
+	border-bottom: 1px solid #ddd;
+	background-color: #00bbee;
+	min-height: 44px;
+}
+.navbar-header {
+	margin-left: 20px;
+}
+.navbar-brand {
+	padding-left: 0px;
+	color: #fff;
+	background-position: 0 13px;
+	height: 44px;
+	line-height: 16px;
+}
+.navbar-brand span {
+	font-size: 18px;
+	color: #ddd;
+	margin: auto 10px auto 0px;
+}
+.navbar-brand:hover {
+	color: #fff;
+}
+.navbar-right a {
+	line-height: 24px;
+	color: #333;
+}
+.navbar-right a.fa {
+	font-size: 20px;
+	color: #fff;
+}
+@media (min-width: 768px) {
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.navbar-right {
+		margin-top: 0;
+		margin-right: 20px;
+	}
+}
+.navbar-nav>li>a {
+	display: inline-block;
+}
+.nav>li>a:focus, .nav>li>a:hover, 
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+	background-color: transparent;
+}
+.navbar-nav>.active>a, .navbar-nav>.active>a:hover {
+	border-bottom: 1px solid #333;
+}
+.navbar-nav .dropdown {
+	padding: 10px;
+}
+.navbar-nav .dropdown-menu {
+    width: 240px;
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: 0 1px 3px #ccc;
+}
+.navbar-nav .app.dropdown-menu {
+	width: 325px;
+	padding-top: 0;
+}
+.app.drop-area {
+	padding: 23px;
+}
+.drop-area {
+	height: auto; 
+	max-height: 500px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.drop-area>li>a {
+	padding: 10px 20px;
+	display: block;
+	clear: both;
+	font-weight: 400;
+	line-height: 1.42857143;
+	color: #333;
+	white-space: nowrap;
+}
+.more, .exit {
+	display: block;
+	background-color: #f5f5f5;
+	text-align: center;
+	width: 100%;
+	line-height: 40px !important;
+	background-color: #f5f5f5;
+}
+.exit {
+	text-align: right;
+	margin-top: 38px;
+}
+.exit > a {
+	padding: 5px 15px;
+	border: 1px solid #ddd;
+	margin-right: 20px;
+	color: #333;
+}
+.exit > a:hover {	
+	color: #fff !important;
+	background-color: #00bbee;
+	border: 0;
+}
+.dropdown-menu a:hover {
+	color: #0251e5;
+}
+.user-photo {
+	float: left;
+	margin: 10px 10px 20px 20px;
+}
+.user-info {
+	line-height: 2;
+	padding: 0 10px 10px 120px;
+	margin: 2px 10px 0 10px;
+}
+.user-action {
+	display: block;
+	color: #08c !important;
+}
+.fa.fa-bars.pull-left {
+	margin-top: 12px;
+	margin-right: 14px;
+	font-size: 20px;
+	color: #ccf1fc;
+}
+.fa.fa-bars.pull-left:hover,.fa.fa-bars.pull-left:focus {
+	color: #fff;
+}
+.fa.fa-star.ue-vmenu-icon-r {
+	color:#ddd;
+}
+.fa.fa-star.ue-vmenu-icon-r:hover{
+    color:#027bff;
+}
+.fa.fa-times.ue-vmenu-icon-r{
+	color: #ddd;
+	float: right;
+	font-size: 18px;
+}
+.fa.fa-times.ue-vmenu-icon-r:hover{
+	color: #027bff;
+}
+.drop-area>li>a>i.fa {
+	padding-top:3px !important;
+}
+.title-icon{
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+}
+.left-top-text{
+	display:inline-block;
+	vertical-align: middle;
+	color:#00aaee;
+}
+.ue-dropdown-menu li a:hover{
+	background-color: #eee;
+	color: #027bff;
+}
+.username {
+	color: #fff !important;
+	display:inline-block;
+	font-size:16px;
+}
+.ue-left-top {
+	background-color: #fafafa;
+	color: #000;
+}
+.ue-menu-wrap {
+	top: 44px;
+}
+.md {
+	color: #00bbee;
+}
+.searchview{
+	display: none;
+}
+.searchview .searchview-content{
+	position: absolute;
+	top: 0;
+	left: 63%;
+	z-index: 3;
+	background-color: #0ae;
+}
+.searchform{
+	height: 44px;
+	line-height: 44px;
+}
+.searchform-wrapper{
+	padding-left: 40px;
+	position: relative;
+	z-index: 2;
+}
+.searchform-input{
+	width: 220px;
+	height: 40px;
+	border: 0;
+	font-size: 16px;
+	line-height:1;
+	line-height: 40px\0;  /*只在IE8、IE9有效*/
+	font-weight: 400;
+	letter-spacing: normal;
+	outline: none;
+	color:#fff;
+	background-color: #0ae;
+}
+.searchform-submit{
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left: 0px;
+	width: 40px;
+	height: 44px;
+	background-size: 20px 44px;
+}
+.searchform-submit.fa.fa-search{
+	font-size: 20px;
+	color: #fff;
+	line-height:44px;
+	text-align: center;
+}
+.ue-icon-title .ue-icon{
+	background:none;
+}
+.ue-vmenu{
+	background-color:#fafafa;
+}
+.ue-left-content{
+	top:47px;
+	background-color:#fafafa;
+}
+.ue-vmenu .ue-vmenu-icon {
+top: 10px;
+}
+.ue-vmenu .ue-vmenu-icon {
+    background-image: url(../images/zTreeStandard.png);
+    background-position: -110px 0;
+    vertical-align: top;
+    width: 18px;
+    height: 15px;
+}
+.ue-vmenu li.on>a>.ue-vmenu-icon {
+    background-image: url(../images/zTreeStandard.png);
+    background-position: -110px -15px;
+    vertical-align: top;
+    width: 18px;
+    height: 15px;
+}
+.ue-vmenu .ue-vmenu-icon.leaf {
+    background-image: url(../images/zTreeStandard.png);
+    margin-right: 2px;
+    background-position: -110px -32px;
+    vertical-align: top;
+    width: 18px;
+    height: 15px;
+}
+/*左侧菜单项选中时左侧显示左边框*/
+.ue-vmenu ul li a:focus, .ue-vmenu ul li a:hover, .ue-vmenu li.curr a {
+	border-left: 3px solid #0be;
+} 
+
+.portal-wrap {
+width: 100%;
+height: 100%;
+}
+.portal-content{
+width: 100%;
+height: 100%;
+}
+/*设置新手导航的样式*/
+.introjs-fixParent {
+    right: 0px;
+    left: 0px;
+}
+.introjs-tooltiptext {
+  	text-align: center;
+}
+.introjs-nextbutton {
+	background-color: #0ae;
+}
+.introjs-tooltipReferenceLayer {
+	visibility: visible;
+}
+/*placeholder字体颜色设置*/
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff;  
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #fff;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+/* ////////////////////////////////////介绍页样式//////////////////////////////////// */
+.intro {
+	display: block;
+	margin: 40px auto;
+}
+
+.headline {
+	margin-top: 0px;
+}
+
+.bsp,.cform,.hsf {
+	background-color: #fafafa;
+}
+
+.fp-tableCell {
+	display: table-row-group;
+}
+
+.title {
+	display: block;
+	text-align: center;
+	font-size: 48px;
+	font-family: microsoft yahei;
+	color: #333;
+	margin-top: 20px;
+}
+
+.subtitle {
+	display: block;
+	text-align: center;
+	font-size: 22px;
+	font-family: microsoft yahei;
+	color: #999;
+	margin-top: 8px;
+}
+
+#fp-nav ul li a.active span,#fp-nav ul li:hover a.active span {
+	background: #0be;
+}
+
+#fp-nav ul li a span {
+	background: #ddd;
+}
+/* 文字提示信息 */
+.tip {
+	position: absolute;
+	top: -2px;
+	right: 20px;
+	float:left;
+	text-align: right;
+	width:50px;
+	font-size: 16px;
+	font-family: microsoft yahei;
+	color: #333;
+}
